@@ -52,8 +52,8 @@ module.exports = function initApp() {
   require(Cobuild.paths.app + '/init/modulesLoader')(app);
 
   //-----------------------------start server---------------------------------\\
-  config.web.port = config.web.port || process.env.PORT; 
-  
+  config.web.port =  process.env.PORT || config.web.port; 
+
   var server = app.listen(config.web.port, function() {
     var port = server.address().port;
     console.log('Server is running on port: ' , port, "  and worker: ",(cluster.worker ? cluster.worker.id : 'n/a'));
