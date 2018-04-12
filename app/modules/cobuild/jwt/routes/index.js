@@ -34,12 +34,6 @@ module.exports = function authenticationRoutes(app) {
  *          "firstName"    : "asdads",
  *          "lastName"     : "asdads",
  *          "email"        : "asdlkasldk@asdkjkda.com",
- *          "gender"       : "Male",
- *          "image"        : "http://simpleicon.com/wp-content/uploads/user1.png",
- *          "updatedAt"    : "2016-01-26T18:55:33.800Z",
- *          "createdAt"    : "2016-01-26T18:55:33.800Z",
- *          "isActive"     : true,
- *          "role"         : "user",
  *          "token"        : "eyJ0eXAiOiJKV1QiLCJhbGciOiJ9.eyJfaW4iOjYzMLCJpYNjM0NTAyOTh9.n964A95bnIgerP_QWoDX7Z8P1rOJw"
  *      }
  * }
