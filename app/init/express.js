@@ -46,7 +46,7 @@ module.exports = function initApp() {
     .use(express.static(Cobuild.Utils.Files.resolvePath('public')))
     .use(i18n.init)
 
-  require('express-custom-response')(Cobuild.paths.customResponses);
+  require('express-custom-response')(__dirname+ '/responses');
 
   //--------------------------------Load modules-------------------------------\\
   require(Cobuild.paths.app + '/init/modulesLoader')(app);

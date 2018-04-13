@@ -12,9 +12,7 @@ var mongoose        = require('mongoose');
 
 
 var errObj = {
-    code: 401,
     userMessager: "",
-    serverInfo: "",
     data: {}
 }
 
@@ -46,35 +44,25 @@ userCtrl.create = function create(req, res) {
 
         authService.generateToken(createdUser, function(err, token) {
   
-            if(err)
-                return res.ok(errorFormat(err, res))
-         
+            if(err) return res.badRequest(errorFormat(err, res))
 
-            if (!err && token) {
-                user.token = token;
-            }
-            
+            if (!err && token) user.token = token;
         
             delete user.password;
 
-            user.successMessage = i18n.__('success_user_add');
-
-            res.ok(user)
+            res.ok({data: user, userMessage: i18n.__('success_user_add')})
             
 
         });
 
     })
     .catch((err) => {
-        errObj.serverInfo = "user_userController_create"
-        res.ok(errorFormat(err, res))
+        errObj.data = req.body;
+        res.badRequest(errorFormat(err, res))
 
     });
     
-    
-
 }; 
-
 
 
 module.exports = userCtrl;

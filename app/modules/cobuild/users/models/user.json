@@ -3,18 +3,23 @@
   "schema": {
     "firstName": {
       "type": "String",
-      "trim": true
+      "trim": true,
+      "required": true
     },
     "lastName": {
       "type": "String",
-      "trim": true
+      "trim": true,
+      "required": true
     },
     "email": {
-      "type": "String"
+      "type": "String",
+      "required": true,
+      "validate":"validEmail",
+      "match": "^([\\w-\\.\\+]+@([\\w-]+\\.)+[\\w-]{2,4})?"
     },
     "password": {
       "type": "String",
-      "required": false,
+      "required": true,
       "minlength": 5
     }
   }

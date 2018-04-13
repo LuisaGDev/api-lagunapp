@@ -16,10 +16,10 @@ mongoose.Error.messages.general.required = "{PATH}_empty";
 var data = fs.readFileSync(Cobuild.Utils.Files.dirpath(__dirname) + '/models/user.json', { encoding: 'utf8' });
 var modelJSON = JSON.parse(data);
 
-/*generator.setValidator('validEmail', function(email) {
+generator.setValidator('validEmail', function(email) {
     var re = /^([\w-\.\+]+@([\w-]+\.)+[\w-]{2,4})$/;
     return re.test(email);
-});*/
+});
 
 var userSchema = new Schema(generator.convert(modelJSON.schema));
 

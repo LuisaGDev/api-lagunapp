@@ -4,7 +4,6 @@ var Cobuild         = require('cobuild2');
 var config          = Cobuild.config;
 var userCtrl        = Cobuild.Utils.Files.getController('cobuild.users.userController');
 var authPolicyIsLoggedIn      = Cobuild.Policies.getPolicy('cobuild.'+config.authentication.strategy+'.isLoggedIn');
-var authPolicyIsAdmin      = Cobuild.Policies.getPolicy('cobuild.'+config.authentication.strategy+'.isAdmin');
 var i18n = require('i18n');
 
 /*
