@@ -1,0 +1,16 @@
+{
+  "name": "Group",
+  "schema": {
+    "cursor": {
+      "type": "String"
+    },
+    "name": {
+      "type": "String",
+      "trim": true,
+      "index": true,
+      "required": true
+    }
+    
+  }
+
+}

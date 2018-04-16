@@ -10,22 +10,22 @@ module.exports = function modulesLoader(app) {
 
     if(Cobuild.config.authentication.strategy == "jwt"){
       
-        var authMiddleware = Cobuild.Utils.Files.getEntity( 'cobuild.jwt.index','middlewares' );
+        var authMiddleware = Cobuild.Utils.Files.getEntity( 'auth.jwt.index','middlewares' );
         app.use(authMiddleware.loadUserFromRequest);
     
     }
-    Cobuild.Utils.Files.listFoldersInFolder(modulesRoot + '/cobuild')
+    Cobuild.Utils.Files.listFoldersInFolder(modulesRoot + '/auth')
     .forEach(function (moduleFolder) {
        
-        debug(pathPackage.join(modulesRoot ,'cobuild' , moduleFolder, routesFolder));
-        Cobuild.Utils.Files.requireFilesInFolderWithLimiter( pathPackage.join(modulesRoot ,'cobuild' , moduleFolder, routesFolder), app);
+        debug(pathPackage.join(modulesRoot ,'auth' , moduleFolder, routesFolder));
+        Cobuild.Utils.Files.requireFilesInFolderWithLimiter( pathPackage.join(modulesRoot ,'auth' , moduleFolder, routesFolder), app);
 
     });
 
     Cobuild.Utils.Files.listFoldersInFolder(modulesRoot)
     .forEach(function (moduleFolder) {
         
-        if(moduleFolder != 'cobuild'){
+        if(moduleFolder != 'auth'){
             Cobuild.Utils.Files.requireFilesInFolderWithLimiter(pathPackage.join(modulesRoot, moduleFolder, routesFolder), app);
         }
 

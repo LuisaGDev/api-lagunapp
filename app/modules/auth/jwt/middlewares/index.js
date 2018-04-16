@@ -1,6 +1,6 @@
 var Cobuild       = require('cobuild2');
-var User          = Cobuild.Utils.Files.getModel('cobuild.users.User').User;
-var authService   = Cobuild.Utils.Files.getEntity('cobuild.jwt.authService','services');
+var User          = Cobuild.Utils.Files.getModel('auth.users.User').User;
+var authService   = Cobuild.Utils.Files.getEntity('auth.jwt.authService','services');
 
 var exports = module.exports;
 

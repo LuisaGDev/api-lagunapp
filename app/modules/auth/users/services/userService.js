@@ -1,6 +1,6 @@
 var Cobuild         = require('cobuild2');
 var config          = Cobuild.config;
-var User            = Cobuild.Utils.Files.getModel('cobuild.users.User').User;
+var User            = Cobuild.Utils.Files.getModel('auth.users.User').User;
 var userWorker      = {};
 var mongoose        = require('mongoose');
 

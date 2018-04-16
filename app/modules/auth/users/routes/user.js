@@ -2,8 +2,8 @@ var express           = require('express');
 var router            = express.Router();
 var Cobuild         = require('cobuild2');
 var config          = Cobuild.config;
-var userCtrl        = Cobuild.Utils.Files.getController('cobuild.users.userController');
-var authPolicyIsLoggedIn      = Cobuild.Policies.getPolicy('cobuild.'+config.authentication.strategy+'.isLoggedIn');
+var userCtrl        = Cobuild.Utils.Files.getController('auth.users.userController');
+var authPolicyIsLoggedIn      = Cobuild.Policies.getPolicy('auth.'+config.authentication.strategy+'.isLoggedIn');
 var i18n = require('i18n');
 
 /*
