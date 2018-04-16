@@ -1,6 +1,6 @@
 var Cobuild = require('cobuild2');
-var validator = require(Cobuild.paths.app+'/validators/loginValidator')
-var authController = Cobuild.Utils.Files.getController('auth.jwt.authController');
+var validator = require('../validators/loginValidator')
+var authController = Cobuild.Utils.Files.getController('jwt.authController');
 var config = Cobuild.config;
 var i18n = require('i18n');
 

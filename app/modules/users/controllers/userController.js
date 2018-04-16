@@ -1,12 +1,12 @@
 "use strict";
 var Cobuild     = require('cobuild2');
 var i18n              = require('i18n');
-var userService = Cobuild.Utils.Files.getEntity('auth.users.userService','services');
+var userService = Cobuild.Utils.Files.getEntity('users.userService','services');
 var userCtrl = {};
 var _ = require('lodash');
 
 var config = Cobuild.config;
-var authService = Cobuild.Utils.Files.getEntity('auth.' + config.authentication.strategy + '.authService', 'services');
+var authService = Cobuild.Utils.Files.getEntity(config.authentication.strategy + '.authService', 'services');
 var async = require('async');
 var mongoose        = require('mongoose');
 

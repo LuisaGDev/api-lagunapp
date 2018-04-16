@@ -5,9 +5,9 @@ var Cobuild         = require('cobuild2');
 var _               = require('lodash');
 var qs              = require('querystring');
 var config          = Cobuild.config;
-var User            = Cobuild.Utils.Files.getModel('auth.users.User').User;
-var authService     = Cobuild.Utils.Files.getEntity('auth.jwt.authService','services');
-var userService     = Cobuild.Utils.Files.getEntity('auth.users.userService','services');
+var User            = Cobuild.Utils.Files.getModel('users.User').User;
+var authService     = Cobuild.Utils.Files.getEntity('jwt.authService','services');
+var userService     = Cobuild.Utils.Files.getEntity('users.userService','services');
 var express         = require('express');
 var i18n            = require('i18n');
 
