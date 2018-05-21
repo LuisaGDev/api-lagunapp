@@ -3,7 +3,7 @@ var _ = require('lodash');
 var defaultConfig = {
   'web': {
     'host': 'localhost',
-    'port':  process.env.PORT ||  3000,
+    'port':  process.env.PORT ||  1337,
     'sessionSecret': 'lagunapp',
     'timeouts': {
       'resetPassword': '1d',
