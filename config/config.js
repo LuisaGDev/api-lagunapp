@@ -3,8 +3,8 @@ var _ = require('lodash');
 var defaultConfig = {
   'web': {
     'host': 'localhost',
-    'port': 3000,
-    'sessionSecret': 'r3lsecret',
+    'port':  process.env.PORT ||  3000,
+    'sessionSecret': 'lagunapp',
     'timeouts': {
       'resetPassword': '1d',
       'activation': '2 days'
@@ -15,7 +15,7 @@ var defaultConfig = {
   'activateSubscription':'token',
   'authentication':{
     'strategy': 'jwt',
-    'tokenSecret': 'tr3lsecret'
+    'tokenSecret': 'tlagunappsecret'
   },
   'jwt': {
     'tokenLife': 63072000,

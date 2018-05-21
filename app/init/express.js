@@ -52,7 +52,7 @@ module.exports = function initApp() {
   require(Cobuild.paths.app + '/init/modulesLoader')(app);
 
   //-----------------------------start server---------------------------------\\
-  config.web.port =  process.env.PORT || config.web.port; 
+  config.web.port = config.web.port; 
 
   var server = app.listen(config.web.port, function() {
     var port = server.address().port;
