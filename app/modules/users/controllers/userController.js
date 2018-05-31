@@ -36,14 +36,14 @@ userCtrl.read = function read(req, res) {
 };
 
 userCtrl.create = function create(req, res) {
- 
+    console.log(":::: BEGIN CREATE")
     userService.createUser(req.body)
     .then((createdUser) => { 
-
+        console.log("::: SUCCESS CREATE")
         var user = createdUser.toObject();
 
         authService.generateToken(createdUser, function(err, token) {
-  
+            console.log(":::: TOKEN ", err)
             if(err) return res.badRequest(errorFormat(err, res))
 
             if (!err && token) user.token = token;
@@ -57,6 +57,7 @@ userCtrl.create = function create(req, res) {
 
     })
     .catch((err) => {
+        console.log("::: ERR CREATE ", err)
         errObj.data = req.body;
         res.badRequest(errorFormat(err, res))
 

@@ -10,7 +10,7 @@
     "start": "gulp apidoc && NODE_PATH=. node server.js",
     "lint": "gulp lint"
   },
-  "author": "rokk3rlabs",
+  "author": "Lagunapp",
   "license": "ISC",
   "devDependencies": {
     "gulp-mocha": "^2.2.0",

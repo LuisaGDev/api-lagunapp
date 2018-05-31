@@ -11,6 +11,7 @@ userWorker.createUser = function createUser(data, res) {
     return new Promise((resolve, reject) => {
      
         User.create(data, function(err, result) {
+        	console.log("::: SERVICE ", err)
             if (err) return reject(err);
             
             return resolve(result)
