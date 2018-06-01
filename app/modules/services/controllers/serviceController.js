@@ -6,13 +6,12 @@ var serviceService    = require(Cobuild.Utils.Files.dirpath(__dirname)+'/service
 var exports                     = module.exports;
 
 exports.create = function(req, res) {
-  
-  Service.create(req.body, function(err, record) {
-    if(err){
-      res.badRequest(err);
-    }else{
-      res.ok(record);
-    }
+  serviceService.create(req.body, req.user)
+  .then(function(record) {
+    res.ok(record);
+  })
+  .catch(function(err) {
+    res.badRequest(err);
   });
 
 };
@@ -22,7 +21,7 @@ exports.list = function(req, res) {
   var id = req.params.id || req.query.id;
 
   serviceService
-  .list(req)
+  .list(req, req.user)
   .then(
     
     function success(result){
