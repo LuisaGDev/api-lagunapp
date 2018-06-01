@@ -4,10 +4,20 @@
     "cursor": {
       "type": "String"
     },
-    "name": {
+    "nameService": {
       "type": "String",
-      "trim": true,
-      "index": true,
+      "required": true
+    },
+    "typeService": {
+      "type": "String",
+      "required": true
+    },
+    "dateCut": {
+      "type": "String",
+      "required": true
+    },    
+    "group": {
+      "type": "String",
       "required": true
     }
     
